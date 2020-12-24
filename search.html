@@ -1,0 +1,38 @@
+
+<!-- Search Bar -->
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta name="viewport" content="width=device-width, initial- 
+ scale=1">
+ <link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-
+ awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="/static/index.css">
+ </head>
+ <body background="https://wallpapercave.com/wp/wp3020203.jpg">
+ <h1><center>FIND MISSING PERSON</center></h1>
+ <form class="example" method="post" action=""
+ style="margin:auto;max-width:600px">
+ <input type="text" placeholder="search person name" name="book">
+ <button type="submit"><i class="fa fa-search"></i>
+ </button>
+ </form>
+ <p></p>
+ <center>
+<table style="width:100%" border="1">
+<thead><tr><th>NAME</th><th>LOCATION</th><th>TIME</th></tr></thead>
+<body>
+ {% for item in data %}
+ <tr>
+ <td align=center> {{item[0]}} </td><td align=center> {{item[1]}} </td><td align=center> 
+{{item[2]}}</td><td align=center> <a href="amal"><button>locate</button></a></td>
+ </br>
+ </tr>
+ 
+ {% endfor %}
+</body>
+</table>
+ </center>
+ </body>
+</html>

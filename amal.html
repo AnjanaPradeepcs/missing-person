@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+ <meta charset="utf-8">
+ <title>amal</title>
+ <style>
+ /* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+ #map {
+ height: 100%;
+ }
+ /* Optional: Makes the sample page fill the window. */
+ html, body {
+ height: 100%;
+ margin: 0;
+ padding: 0;
+ }
+ </style>
+ </head>
+ <body>
+ <div id="map"></div>
+ <script>
+ function initMap() {
+ var myLatLng = [{lat: 11.255498, lng: 75.776825}, {lat: 11.315675, lng: 76.016073}, 
+{ lat:11.345556, lng: 76.036648}, {lat:11.416343, lng: 75.936440}, { lat: 11.321795, lng: 75.933668}];
+ var jslarr = [true,true,false,false,true];
+var path = [];
+ var stnord = [1, 4, 0];
+ for(var i = 0; i<stnord.length; i++)
+ {
+ path.push(myLatLng[stnord[i]]);
+ } console.log(path); var stnn = ['kozhikkode', 'Mukkom', 'koodaranji', 'thamarassery', 
+'NIT'];
+ var map = new google.maps.Map(document.getElementById('map'), {
+ zoom: 12,
+ center: myLatLng[3]
+ });
+ 
+ for(var i = 0; i<myLatLng.length; i++) if(jslarr[i]){
+ var marker = new google.maps.Marker({
+ position: myLatLng[i],
+ map: map,
+ title: stnn[i]
+ }); }
+var missingPath = new google.maps.Polyline({
+ path: path,
+ geodesic: true,
+ strokeColor: '#FF0000',
+ strokeOpacity: 1.0,
+ strokeWeight: 2
+ });
+ missingPath.setMap(map); }
+ </script>
+ <script async defer
+ 
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUnMz4MLO_rkmIw_pMWmdofukgSsH
+eMJ0&callback=initMap">
+ </script>
+ </body>
+</html>
